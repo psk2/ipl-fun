@@ -1,6 +1,6 @@
 {
   "name": "ipl-fun",
-  "app_id": "",
+  "app_id": "2c4fd3af",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
