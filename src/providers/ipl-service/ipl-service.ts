@@ -24,8 +24,8 @@ export class IplServiceProvider {
 	constructor(public http: HttpClient, private storage: Storage) { }
 
 	getenvironment = () => {
-		this.environment = "localhost";
-		// this.environment = "prod";
+		// this.environment = "localhost";
+		this.environment = "prod";
 		var data = {};
 		switch (this.environment) {
 			/* LocalHost Urls - Used SIT information*/
@@ -40,7 +40,7 @@ export class IplServiceProvider {
 			case 'prod':
 				data = {
 					env: "prod",
-					baseUrl: "http://localhost:3001"
+					baseUrl: "https://ipl-fun.herokuapp.com/"
 				};
 				break;
 
