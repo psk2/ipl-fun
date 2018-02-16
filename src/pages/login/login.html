@@ -11,18 +11,18 @@
 	<form [formGroup]="loginForm" (ngSubmit)="doLogin()" #f="ngForm">
 		<ion-item>
 			<ion-label floating>Email</ion-label>
-			<ion-input type="text" name="email" formControlName="email"></ion-input>
+			<ion-input type="email" name="email" formControlName="email"></ion-input>
 		</ion-item>
-		<span *ngIf="!loginForm.controls.email.valid  && (loginForm.controls.email.dirty)">
+		<span *ngIf="submitted && (!loginForm.controls.email.valid  && (loginForm.controls.email.dirty))">
 			<p class="errorMessage">Please enter a valid email.</p>
 		</span>
 		<ion-item>
 			<ion-label floating>Password</ion-label>
 			<ion-input type="password" name="password" formControlName="password"></ion-input>
 		</ion-item>
-		<span *ngIf="!loginForm.controls.password.valid  && (loginForm.controls.password.dirty)">
-			<p class="errorMessage">Please enter a valid email.</p>
+		<span *ngIf="submitted && (!loginForm.controls.password.valid  && (loginForm.controls.password.dirty))">
+			<p class="errorMessage">Please enter a valid password.</p>
 		</span>
-		<button ion-button block type="submit">Submit</button>
+		<button ion-button block type="submit">Submit- {{submitted}}</button>
 	</form>
 </ion-content>

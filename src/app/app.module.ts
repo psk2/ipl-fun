@@ -11,12 +11,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { MatchesPage } from '../pages/matches/matches';
-import { BidAmountPage } from '../pages/bid-amount/bid-amount';
 import { IplServiceProvider } from '../providers/ipl-service/ipl-service';
 
 import { HttpClientModule } from '@angular/common/http';
 import 'rxjs/Rx';
 import { ValidationProvider } from '../providers/validation/validation';
+import {JwtHelper} from "angular2-jwt";
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
 	declarations: [
@@ -26,12 +27,12 @@ import { ValidationProvider } from '../providers/validation/validation';
 		LoginPage,
 		RegisterPage,
 		MatchesPage,
-		BidAmountPage,
 	],
 	imports: [
 		BrowserModule,
 		IonicModule.forRoot(MyApp),
 		HttpClientModule,
+		IonicStorageModule.forRoot()
 
 	],
 	bootstrap: [IonicApp],
@@ -42,7 +43,6 @@ import { ValidationProvider } from '../providers/validation/validation';
 		LoginPage,
 		RegisterPage,
 		MatchesPage,
-		BidAmountPage,
 	],
 	providers: [
 		StatusBar,

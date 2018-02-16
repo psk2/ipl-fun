@@ -15,7 +15,15 @@ export class HomePage {
 	}
 
 	ionViewDidLoad() {
-		this.service.getMatches();
+		this.service.getMatches()
+		.subscribe(
+			response => {
+				let res: any = response;
+				console.log('res', res)
+			},
+			err => {
+			}
+		  );
 	}
 
 	login() {

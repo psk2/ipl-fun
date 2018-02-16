@@ -14,14 +14,14 @@
 
 
 <ion-content padding>
-	<form [formGroup]="registration" (ngSubmit)="register()" #f="ngForm">
+	<form [formGroup]="registrationForm" (ngSubmit)="register()" #f="ngForm">
 		<ion-item>
 			<ion-label floating>Name</ion-label>
 			<ion-input type="text" name="name" formControlName="name"></ion-input>
 		</ion-item>
 		<ion-item>
 			<ion-label floating>Email</ion-label>
-			<ion-input type="text" name="email" formControlName="email"></ion-input>
+			<ion-input type="email" name="email" formControlName="email"></ion-input>
 		</ion-item>
 		<ion-item>
 			<ion-label floating>Password</ion-label>

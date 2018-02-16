@@ -26,7 +26,7 @@ export class ValidationProvider {
 	static passwordValidator(control) {
 		// {6,100}           - Assert password is between 6 and 16 characters
 		// (?=.*[0-9])       - Assert a string has at least one number
-		if (control.value.match(/^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{6,16}$/)) {
+		if (control.value.match(/^(?=.*)[a-zA-Z0-9!@#$%^&*]{6,16}$/)) {
 			return null;
 		} else {
 			return { 'invalidPassword': true };

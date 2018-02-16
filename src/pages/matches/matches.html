@@ -1,27 +1,18 @@
-<!--
-  Generated template for the MatchesPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
 	<ion-navbar>
 		<ion-title>matches</ion-title>
 	</ion-navbar>
-
 </ion-header>
-
 
 <ion-content padding>
 	<ion-card *ngFor="let match of matchesArray">
 
 		<ion-item>
-			<!-- <ion-avatar item-start>
-              <img src="assets/imgs/images.jpeg" />
+			<ion-avatar item-start>
+				<img src="assets/imgs/rcb-csk.jpeg" />
           </ion-avatar>
           <h2>Marty McFly</h2>
-		  <p>November 5, 1955</p> -->
+		  <p>November 5, 1955</p>
 			<span>{{match}}</span>
 		</ion-item>
 
@@ -30,35 +21,18 @@
 		<ion-card-content>
 			<button ion-button bold> Bid Points
 				<ion-select [(ngModel)]="gaming" (ngModelChange)="submitBidAmount()">
-					<ion-option value="10">10</ion-option>
-					<ion-option value="20">20</ion-option>
-					<ion-option value="30">30</ion-option>
-					<ion-option value="40">40</ion-option>
-					<ion-option value="50">50</ion-option>
-					<ion-option value="60">60</ion-option>
+					<ion-option value=10>10</ion-option>
+					<ion-option value=20>20</ion-option>
+					<ion-option value=30>30</ion-option>
+					<ion-option value=40>40</ion-option>
+					<ion-option value=50>50</ion-option>
+					<ion-option value=60>60</ion-option>
+					<ion-option value=70>70</ion-option>
+					<ion-option value=80>80</ion-option>
+					<ion-option value=90>90</ion-option>
+					<ion-option value=100>100</ion-option>
 				</ion-select>
 			</button>
 		</ion-card-content>
-
-		<!-- <ion-row>
-          <ion-col>
-            <button ion-button icon-left clear small>
-              <ion-icon name="thumbs-up"></ion-icon>
-              <div>12 Likes</div>
-            </button>
-          </ion-col>
-          <ion-col>
-            <button ion-button icon-left clear small>
-              <ion-icon name="text"></ion-icon>
-              <div>4 Comments</div>
-            </button>
-          </ion-col>
-          <ion-col center text-center>
-            <ion-note>
-              11h ago
-            </ion-note>
-          </ion-col>
-        </ion-row> -->
-
 	</ion-card>
 </ion-content>

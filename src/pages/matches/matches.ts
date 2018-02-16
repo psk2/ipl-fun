@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
-import { BidAmountPage } from '../bid-amount/bid-amount';
 import { HomePage } from '../home/home';
 
 /**
@@ -30,8 +29,8 @@ export class MatchesPage {
 		}
 	}
 	bidding(match) {
-		let modal = this.modalCtrl.create(BidAmountPage, { yourParam: match });
-		modal.present();
+		// let modal = this.modalCtrl.create(BidAmountPage, { yourParam: match });
+		// modal.present();
 	}
 	submitBidAmount(){
 		let alert = this.alertCtrl.create({
@@ -41,14 +40,12 @@ export class MatchesPage {
 				{
 				  text: 'Ok',
 				  handler: data => {
-					this.navCtrl.push(HomePage)
+					// this.navCtrl.push(HomePage)
 				  }
 				}
 			  ]
 		});
 		alert.present();
-		// console.log('gaming selected',this.gaming);
-		// this.navCtrl.push(HomePage)
 	}
 
 }
