@@ -12,6 +12,11 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { MatchesPage } from '../pages/matches/matches';
 import { BidAmountPage } from '../pages/bid-amount/bid-amount';
+import { IplServiceProvider } from '../providers/ipl-service/ipl-service';
+
+import { HttpClientModule } from '@angular/common/http';
+import 'rxjs/Rx';
+import { ValidationProvider } from '../providers/validation/validation';
 
 @NgModule({
 	declarations: [
@@ -21,11 +26,13 @@ import { BidAmountPage } from '../pages/bid-amount/bid-amount';
 		LoginPage,
 		RegisterPage,
 		MatchesPage,
-		BidAmountPage
+		BidAmountPage,
 	],
 	imports: [
 		BrowserModule,
 		IonicModule.forRoot(MyApp),
+		HttpClientModule,
+
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [
@@ -35,12 +42,14 @@ import { BidAmountPage } from '../pages/bid-amount/bid-amount';
 		LoginPage,
 		RegisterPage,
 		MatchesPage,
-		BidAmountPage
+		BidAmountPage,
 	],
 	providers: [
 		StatusBar,
 		SplashScreen,
-		{ provide: ErrorHandler, useClass: IonicErrorHandler }
+		{ provide: ErrorHandler, useClass: IonicErrorHandler },
+    IplServiceProvider,
+    ValidationProvider
 	]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { RegisterPage } from '../register/register';
+import { IplServiceProvider } from '../../providers/ipl-service/ipl-service';
 
 @Component({
 	selector: 'page-home',
@@ -9,9 +10,14 @@ import { RegisterPage } from '../register/register';
 })
 export class HomePage {
 
-	constructor(public navCtrl: NavController) {
+	constructor(private service: IplServiceProvider,public navCtrl: NavController) {
 
 	}
+
+	ionViewDidLoad() {
+		this.service.getMatches();
+	}
+
 	login() {
 		this.navCtrl.push(LoginPage)
 	}
