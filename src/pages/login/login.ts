@@ -4,6 +4,7 @@ import { MatchesPage } from '../matches/matches';
 import { Validators, FormBuilder } from '@angular/forms';
 import { IplServiceProvider } from '../../providers/ipl-service/ipl-service';
 import { ValidationProvider } from '../../providers/validation/validation';
+import { RegisterPage } from '../register/register';
 
 
 /**
@@ -32,36 +33,37 @@ export class LoginPage {
 		this.submitted = true;
 		if (this.loginForm.dirty && this.loginForm.valid) {
 			this.iplService.playerLogin(this.loginForm.value)
-			.subscribe(
-				response => {
-					let res: any = response;
-					console.log('res', res)
-					if (res.status && res.status === "success") {
-						this.loginForm.reset();
-						this.navCtrl.push(MatchesPage)
+				.subscribe(
+					response => {
+						let res: any = response;
+						console.log('res', res)
+						if (res.status && res.status === "success") {
+							this.loginForm.reset();
+							this.navCtrl.push(MatchesPage)
+						}
+					},
+					err => {
+						if (err) {
+							this.showAlert();
+						}
 					}
-				},
-				err => {
-					if(err){
-						this.showAlert();
-					}
-				}
-			  );
+				);
 		}
 	}
 
 	showAlert() {
 		let alert = this.alertCtrl.create({
 			title: 'Sorry..!',
-			subTitle: 'You are not registerd yet. Please register to logn..',
+			subTitle: 'You are not registerd yet. Please register to login..',
 			buttons: [
 				{
-				  text: 'Ok',
-				  handler: data => {
-					this.loginForm.reset();
-				  }
+					text: 'Ok',
+					handler: data => {
+						this.loginForm.reset();
+						this.navCtrl.push(RegisterPage)
+					}
 				}
-			  ]
+			]
 		});
 		alert.present();
 	}

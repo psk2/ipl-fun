@@ -5,9 +5,6 @@ import { Storage } from "@ionic/storage";
 import { Observable } from 'rxjs/Rx';
 // import 'rxjs/add/operator/map'
 
-import "rxjs/add/operator/catch"
-import "rxjs/add/observable/throw"
-import "rxjs/add/operator/map"
 
 /*
   Generated class for the IplServiceProvider provider.
@@ -40,7 +37,7 @@ export class IplServiceProvider {
 			case 'prod':
 				data = {
 					env: "prod",
-					baseUrl: "https://ipl-fun.herokuapp.com/"
+					baseUrl: "https://ipl-fun.herokuapp.com"
 				};
 				break;
 
